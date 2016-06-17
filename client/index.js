@@ -13,7 +13,5 @@ navigator.serviceWorker.register('service-worker.js')
 			});
 
 	}).then(function(subscription){
-		endpoint = subscription.endpoint;
-
-		console.log(endpoint);
+    console.log(JSON.stringify(subscription.toJSON()));
 	});

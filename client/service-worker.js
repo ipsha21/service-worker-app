@@ -5,7 +5,6 @@ self.addEventListener('push', function(event) {
   // on https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData.
   var payload = event.data ? event.data.text() : 'no payload';
 
-	console.log(self.registration);
   // Keep the service worker alive until the notification is created.
   event.waitUntil(
     // Show a notification with title 'ServiceWorker Cookbook' and use the payload
