@@ -6,15 +6,10 @@ import HomePage from "../components/HomePage";
 
 function mapStateToProps(state) {
   return {
+    messages: state.messages,
   };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-  }, dispatch);
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
 )(HomePage);
