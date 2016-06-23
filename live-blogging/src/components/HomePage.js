@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 export default class HomePage extends Component {
   render() {
-    const {} = this.props;
+    // const {} = this.props;
     return (
       <div className="container">
         <div className="page-header">

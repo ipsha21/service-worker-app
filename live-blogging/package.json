@@ -4,12 +4,9 @@
   "description": "Demo app of the live-blog feature.",
   "scripts": {
     "dist": "NODE_ENV=production webpack --optimize-minimize --config webpack.prod.js && cp index.prod.html dist/index.html",
-    "ab_testing": "NODE_ENV=production webpack --config webpack.abtesting.dist.js --optimize-minimize && cp abtesting.html dist/",
-    "lint": "eslint src test",
+    "lint": "eslint src",
     "publish-to-gh-pages": "rimraf build && PUBLIC_PATH='/service-worker-app/' npm run dist && npm run ab_testing && bin/live-blog build -d build && gh-pages --dist build/",
-    "start": "NODE_ENV=development node devServer.js",
-    "tdd": "NODE_ENV=test babel-node node_modules/.bin/_mocha --require ./test/setup-jsdom.js 'test/**/*_test.js' --watch",
-    "test": "NODE_ENV=test babel-node node_modules/.bin/_mocha --require ./test/setup-jsdom.js 'test/**/*_test.js'"
+    "start": "NODE_ENV=development node devServer.js"
   },
   "bin": {
     "live-blog": "bin/live-blog"
