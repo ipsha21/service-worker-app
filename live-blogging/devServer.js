@@ -14,6 +14,11 @@ app.use(require("webpack-dev-middleware")(compiler, {
 
 app.use(require("webpack-hot-middleware")(compiler));
 
+app.get("/service-worker.js", function(req, res) {
+  res.append('Content-Type', 'text/javascript');
+  res.sendFile(path.join(__dirname, "js/service-worker.js"));
+});
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "index.dev.html"));
 });

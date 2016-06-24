@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Demo app of the live-blog feature.",
   "scripts": {
-    "dist": "NODE_ENV=production webpack --optimize-minimize --config webpack.prod.js && cp index.prod.html dist/index.html",
+    "dist": "NODE_ENV=production webpack --optimize-minimize --config webpack.prod.js && cp index.prod.html dist/index.html && cp js/service-worker.js dist/",
     "lint": "eslint src",
-    "publish-to-gh-pages": "rimraf build && PUBLIC_PATH='/service-worker-app/' npm run dist && npm run ab_testing && bin/live-blog build -d build && gh-pages --dist build/",
+    "publish-to-gh-pages": "rimraf build && PUBLIC_PATH='/service-worker-app/' npm run dist && bin/live-blog build -d build && gh-pages --dist build/",
     "start": "NODE_ENV=development node devServer.js"
   },
   "bin": {
