@@ -10,10 +10,11 @@ self.addEventListener('push', function(event) {
 
   // Keep the service worker alive until the notification is created.
   event.waitUntil(
-    // Show a notification with title 'ServiceWorker Cookbook' and use
-    // the payload as the body.
-    self.registration.showNotification('Kinto', {
-      body: payload,
+    // Broadcast the message to all tabs
+    self.clients.matchAll().then(function(clients) {
+      clients.forEach(function(client) {
+        client.postMessage(payload);
+      });
     })
   );
 });
