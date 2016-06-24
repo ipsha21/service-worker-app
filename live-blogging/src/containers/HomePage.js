@@ -6,10 +6,10 @@ import HomePage from "../components/HomePage";
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
+    messages: state.blog.messages
   };
 }
 
 export default connect(
-  mapStateToProps,
+  mapStateToProps
 )(HomePage);
