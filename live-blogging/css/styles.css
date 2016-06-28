@@ -3,6 +3,10 @@ h1 {
   font-size: 2.2em;
 }
 
+.footer {
+	text-align: center;
+}
+
 /* Spinner http://tobiasahlin.com/spinkit/ */
 .spinner {
   margin: 30px auto 0;
