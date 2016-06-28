@@ -15,6 +15,10 @@ self.addEventListener('push', function(event) {
       clients.forEach(function(client) {
         client.postMessage(payload);
       });
+    }).then(function(){
+      self.registration.showNotification('Live blog message', {
+        body: payload,
+      });
     })
   );
 });
