@@ -15,7 +15,7 @@ if number_of_args < 2:
     sys.exit(1)
 
 if number_of_args > 2:
-    message = sys.argv[2]
+    message = sys.argv[2].decode('utf-8')
 else:
     message = input()
 
