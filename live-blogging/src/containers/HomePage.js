@@ -6,7 +6,8 @@ import HomePage from "../components/HomePage";
 
 function mapStateToProps(state) {
   return {
-    messages: state.blog.messages
+    messages: state.blog.messages,
+    subscription: state.blog.subscription
   };
 }
 

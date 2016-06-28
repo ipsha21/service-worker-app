@@ -4,7 +4,7 @@ import { render } from "react-dom";
 
 import configureStore from "./store/configureStore";
 import HomePage from "./containers/HomePage";
-import { newMessage } from "./actions/blog";
+import { newMessage, registerSubscription } from "./actions/blog";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "codemirror/lib/codemirror.css";
@@ -47,4 +47,5 @@ navigator.serviceWorker.register('service-worker.js')
       });
   }).then(function(subscription){
     console.log(JSON.stringify(subscription.toJSON()));
+    store.dispatch(registerSubscription(subscription.toJSON()));
   });
