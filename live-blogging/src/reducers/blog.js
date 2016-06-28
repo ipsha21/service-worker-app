@@ -1,9 +1,11 @@
 import {
   MESSAGE_RECEIVED,
+  SUBSCRIPTION_CONFIGURED,
 } from "../constants";
 
 const INITIAL_STATE = {
-  messages: []
+  messages: [],
+  subscription: {},
 };
 
 export function blog(state = INITIAL_STATE, action) {
@@ -13,6 +15,9 @@ export function blog(state = INITIAL_STATE, action) {
         date: new Date().toString(),
         text: action.message
       }]};
+    }
+    case SUBSCRIPTION_CONFIGURED: {
+      return {...state, subscription: action.subscription};
     }
     default: {
       return state;
